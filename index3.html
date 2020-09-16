@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init()
+        {
+           declareBtns();
+        }
+
+        function declareBtns()
+        {
+            id_chnge_btn.onclick = onchangImageClick;
+        }
+        function onchangImageClick()
+        {
+            id_h2.innerHTML = "Welcome my site";
+            id_img.src = "image2.jpg"
+        }
+    
+    </script>
+</head>
+<body onload="init()">
+    <h2 id="id_h2">h2</h2>
+    <h3 id="id_h3">Next pic</h3>
+    <img id="id_img" src="jpeg.image.jpg">
+    <br>
+    <button onclick="onchangImageClick()">Change image</button>
+    <button id="id_change_btn">Change image2</button>
+
+    
+</body>
+</html>

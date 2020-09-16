@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המשך לולאות</title>
+    <script>
+        function init()
+        {            
+            
+        for(var i = 0; i <= 9; i++)
+        {
+            id_h2.innerHTML += i*3+10+" ,";
+            id_body.innerHTML += "<img src'_image/pic"+i+".jpg' width= '200' >"
+        }
+
+            
+            
+        }
+    </script>
+</head>
+<body onload="init()" id="id_body">
+<h1>Welcome to the loop world</h1>
+<h2 id="id_h2"></h2>    
+    
+</body>
+</html>

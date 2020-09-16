@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סדרות טלוויזיה</title>
+    <script>
+        function init()
+        {
+             createSeries("The simpsons" , 30 , 950000);
+             createSeries("X-man" ,40 , 1000000);
+             createSeries("Spayderman" , 25 , 700500);
+             createSeries("Dexter" , 12 , 540000);
+        }      
+        
+        function createSeries(_name , _seasons , _views)
+        {
+            id_body.innerHTML += "<h2> "+_name+" </h2>";
+            id_body.innerHTML += "<div>Seasons: "+_seasons+" </div>";
+            id_body.innerHTML += "<div>Views: "+_views+" </div>";
+
+        }
+
+    </script>
+</head>
+<body onload="init()" id="id_body">
+
+
+</body>
+</html>

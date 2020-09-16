@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חישוב מע"מ</title>
+    <script>
+        function init()
+        {
+
+        }
+
+        function onCalcVat()
+        {
+            //chacVAT(id_price_input.value);
+            id_score_span.innerHTML = returnVAT(id_price_input.value)
+        }
+        
+        function returnVAT(_price)
+        {
+            var rt;
+            rt = _price*1.17;
+            return formatNumber(rt);
+        }
+
+        function chacVAT(_price)
+        {
+            id_score_span.innerHTML = _price*1.17;
+        }
+
+        /// misc functions
+        function formatNumber(num) {
+            var array = num.toString() .split('');
+            var index = -3;
+            while (array.length + index > 0) {
+                array.splice(index, 0, ',');
+                index -= 4;
+                
+            }
+            return array.join(''); 
+            
+        };            
+    </script>
+</head>
+<body onload="init()">
+<h1>Tax Calculator 17% VAT</h1>
+<h2>Enter price:</h2>
+<input type="number"  id="id_price_input">
+<h2>Price with VAT: <span id="id_score_span"></span></h2>
+<button onclick="onCalcVat()">Calc VAT</button> 
+    
+</body>
+</html>

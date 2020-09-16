@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init()
+        {
+
+        }
+
+        function onBtnClick()
+        {
+             checkAge()   
+        }
+
+        function checkAge()
+        {    
+            if(id_input.value < 18)
+            {
+               id_h1.innerHTML = "Yoy young you should be in school";
+            }
+            else if(id_input.value == 19 || id_input.value == 20 )
+            {
+                id_h1.innerHTML = "Yoy young you need to go party";
+                
+            }
+            else{
+                id_h1.innerHTML = "Yoy are old you need to go work";  
+            }
+        }     
+    </script>
+</head>
+<body onload="init()">
+    <h1 id="id_h1">Welcome to Condition world</h1>
+    <h2>Enter your age:</h2>
+    <input type="text" id="id_input">
+    <br>
+    <button onclick="onBtnClick()">Click here</button>
+    
+</body>
+</html>
