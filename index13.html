@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טיימר</title>
+</head>
+<body>
+    <script>
+         var counter; 
+         var timerIndex;
+
+
+
+
+
+             window.onload = function() {
+                 //setTimeout(writHello, 2000);
+                 counter = 5;
+                 timerIndex = 0;
+
+             }
+             
+             function onStartClick() {
+                 if(timerIndex == 0)
+                 {
+                    timerIndex = setInterval(writHello,500); 
+                }
+            }
+             function writHello() {
+                 counter--;
+                 if(counter <= 0) {
+                     window.open("https://google.co.il","_self");
+                     clearInterval(timerIndex);
+                     timerIndex = 0;
+                 }   
+                 id_h2.innerHTML = counter;
+             }
+        </script>
+</body>
+     <h2 id="id_h2"></h2>
+     <button onclick="onStartClick()">start</button>
+</html>
