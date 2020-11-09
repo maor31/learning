@@ -1,32 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js the start</title>
-    <script>
-    function init()
-    {
-         //document.getElementById("id_h3").innerHTML = "Js ruls old";
-         id_h3.innerHTML = "Js ruls new";
-          id_h3.style.color = "red";
-          id_jpeg.width = 200;
-          id_img.src = "jpeg.image.jpg";
-          id_input.value = "maor.co.il";
-          id_input.style.fontsize = "20px";
-    }
-
-
-      
-    </script>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body onload="init()">
-    <h2 id="id_h2">this is h2</h2>
-    <h3 id="id_h3">this is h3</h3>
-    <img id="id_jpeg" src="jpeg.image.jpg" width="200">
-    <br>
-    <input id="id_input" type="maor.js">
 
-    
+<body>
+
+  <!-- Add your site or application content here -->
+  <p>Get quote.</p>
+  <div>
+    <input id="euro">
+    <select id="currency"></select>
+    <span id="answer_quote"></span>
+    <button type="button" id="btn_quote" onclick="doQuote()">QUOTE</button>
+  </div>
+  <script>
+    var json;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        json = JSON.parse(this.responseText);
+        Object.keys(json.rates).forEach(function(k,v){
+          // console.log(k + ' - ' + json.rates[k]);
+          // console.log(this[v]);
+          let x = document.getElementById("currency");
+          let option = document.createElement("option");
+          option.text = k;
+          option.value = json.rates[k];
+          x.add(option);
+        });
+      }
+    };
+    xhttp.open("GET", "https://api.exchangeratesapi.io/latest", true);
+    xhttp.send();
+    function doQuote() {
+      let num = document.getElementById('euro').value;
+      if (num){
+        let c = document.getElementById("currency").value;
+        let a = c * num;
+        document.getElementById("answer_quote").innerHTML = a;
+      }
+    }
+  </script>
 </body>
 </html>
